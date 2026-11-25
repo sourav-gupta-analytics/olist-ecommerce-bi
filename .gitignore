@@ -1,0 +1,9 @@
+/build/
+/data/
+__pycache__/
+*.zip
+*.sqlite*
+*.db
+.env
+**/.pbi/cache.abf
+**/.pbi/localSettings.json
