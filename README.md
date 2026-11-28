@@ -1,6 +1,16 @@
-# Advanced SQL E-commerce Business Intelligence
+# E-commerce Sales, Retention & Delivery Intelligence
 
-An independent marketplace case study in **SQLite, Python and Power BI**. The project asks where delivered merchandise sales grew, how often buyers returned, and which delivery markets warrant investigation.
+An independent **SQLite, Python and Power BI** case study on 99,441 historical Brazilian marketplace orders. It examines delivered merchandise sales, repeat purchases and delivery performance by state. [Portfolio case study](https://souravgupta.vercel.app/#projects)
+
+## Key findings
+
+| Area | Finding | Reproducible evidence |
+|---|---|---|
+| Sales | November 2017 had the highest delivered merchandise sales within the comparable period. | [Monthly KPI query](sql/reports/01_monthly_kpis.sql) |
+| Retention | 2.27% of buyers with a full 90 days of follow-up placed a second delivered order within 90 days of their first. | [Repeat purchase query](sql/reports/06_repeat_purchase.sql) |
+| Delivery | Rio de Janeiro recorded 1,495 late orders and an 87.89% on-time rate among eligible delivered orders. | [State delivery query](sql/reports/07_delivery_by_state.sql) |
+
+Prioritize Rio de Janeiro for a review of seller handoffs and carrier timing. Use the 90-day repeat rate alongside calendar-month cohort retention so each measure keeps its own observation window.
 
 ## What the analysis covers
 
@@ -42,4 +52,4 @@ python -B run.py --source "C:/path/to/olist-v2.zip" --out build/olist
 - [Data provenance and field allowlist](docs/DATA_PROVENANCE.md)
 - [Hinglish SQL and interview walkthrough](docs/HINGLISH_GUIDE.md)
 
-The repository source package includes implementation, documentation and a synthetic fixture. Historical inputs and report artifacts have their own provenance and distribution review. Olist and its collaborators released the historical dataset under CC BY-NC-SA 4.0. This analysis selects fields, normalizes types and produces grouped reports. [Original dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) · [Dataset license](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+The repository includes the analysis code, documentation and synthetic fixture. The downloadable historical inputs are available from Olist. The commands above recreate the aggregate CSV reports used in the Power BI case study. Olist and its collaborators released the historical dataset under CC BY-NC-SA 4.0. This analysis selects fields, normalizes types and produces grouped reports. [Original dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) · [Dataset license](https://creativecommons.org/licenses/by-nc-sa/4.0/)
